@@ -4,9 +4,13 @@ class PackagesController < ApplicationController
 
     @package = @courier.packages.create(package_params)
 
-    @package.save
-
-    redirect_to @courier
+    if @package.save
+      redirect_to @courier, notice: t('package_cr',
+                                      tracking_number: @package.tracking_number,
+                                      courier: @courier.name)
+    else
+      redirect_to @courier, alert: t('package_cr_err')
+    end
   end
   
   private

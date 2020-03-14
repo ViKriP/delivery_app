@@ -3,7 +3,7 @@
 = form_for @package, url: courier_packages_path(@courier.id), method: :post, class: "general-form-md" do |f|
   .form-group.mb-35{class: "#{error_class(@package, :tracking_number)}"}
     = f.label :tracking_number, t('tracking_number'), class: "control-label input-label"
-    = f.text_field :tracking_number, class: "form-control"
+    = f.text_field :tracking_number, placeholder: t('enter_tracking_number'), class: "form-control"
     %span.help-block= show_errors(@package, :tracking_number)
   .form-group.mb-35{class: "#{error_class(@package, :delivery_status)}"}
     = f.label :delivery_status, t('delivery_status'),class: "control-label input-label"

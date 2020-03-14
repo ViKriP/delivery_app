@@ -16,17 +16,21 @@ class CouriersController < ApplicationController
   def create
     @courier = Courier.new(courier_params)
  
-    @courier.save
-
-    redirect_to @courier
+    if @courier.save
+      redirect_to @courier, notice: t('courier_cr')
+    else
+      redirect_to @courier, alert: t('courier_cr_err')
+    end
   end
 
   def update
     @courier = Courier.find_by(id: params[:id])
 
-    @courier.update(courier_params)
-
-    redirect_to @courier
+    if @courier.update(courier_params)
+      redirect_to @courier, notice: t('courier_upd')
+    else
+      redirect_to @courier, alert: t('courier_upd_err')
+    end
   end
 
   private
