@@ -1,2 +1,21 @@
-%h1 Couriers#show
-%p Find me in app/views/couriers/show.html.haml
+%main.container.general-main-wrap
+  %h1.general-title-margin
+    = t('courier')
+  .row.mb-20
+    .col-sm-5
+      %h3.general-subtitle.mt-0= t('data')
+      %p.general-address
+        = t('name: ')
+        %b= @courier.name
+        %br
+        = t('email: ')
+        = @courier.email
+      %hr
+      %h3.general-subtitle.mt-0= t('packages')
+      = t('delivered')
+      = @courier.packages.where(delivery_status: true).count
+      %br
+      = t('undelivered')
+      = @courier.packages.where(delivery_status: false).count
+      %hr
+      = render partial: 'form_package'

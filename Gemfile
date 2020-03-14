@@ -9,6 +9,7 @@ gem 'bootstrap-sass'
 gem 'coffee-rails', '~> 4.2'
 gem 'haml-rails'
 gem 'i18n'
+gem 'font-awesome-rails'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
 gem 'jquery-rails'

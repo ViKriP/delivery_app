@@ -1,2 +1,23 @@
-%h1 Couriers#index
-%p Find me in app/views/couriers/index.html.haml
+%main.container.general-main-wrap
+  %h1.mt-0.mb-25= t('couriers')
+  = link_to 'New courier', new_courier_path, class: "btn btn-primary"
+  .visible-xs
+    - if !Courier.exists?
+      .jumbotron.text-center.mb-0
+        %p= t('no_couriers')
+    - else
+      = render partial: 'courier_list_xs', collection: Courier.all.order(:created_at)
+  .hidden-xs.mb-res-50
+    - if !Courier.exists?
+      .jumbotron.text-center.mb-0
+        %p= t('no_couriers')
+    - else
+      %table.table.table-hover
+        %thead
+          %tr
+            %th
+              %span.in-grey-600= t('name')
+            %th
+              %span.in-grey-600= t('settings')
+        %tbody
+          = render partial: 'courier_list', collection: Courier.all.order(:created_at)

@@ -1,2 +1,6 @@
-%h1 Couriers#edit
-%p Find me in app/views/couriers/edit.html.haml
+%main.container
+  %h1.general-title-margin
+    = t('edit_courier')
+    .row.mb-60
+      .col-sm-5
+        = render partial: 'form_courier_edit'
