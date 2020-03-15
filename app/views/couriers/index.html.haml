@@ -6,7 +6,10 @@
       .jumbotron.text-center.mb-0
         %p= t('no_couriers')
     - else
-      = render partial: 'courier_list_xs', collection: Courier.all.order(:created_at)
+      = render partial: 'courier_list_xs', collection: @courier
+      - if @pagy.pages > 1
+        .text-center
+          = render partial: 'pagy/nav', locals: { pagy: @pagy }
   .hidden-xs.mb-res-50
     - if !Courier.exists?
       .jumbotron.text-center.mb-0
@@ -20,4 +23,7 @@
             %th
               %span.in-grey-600= t('settings')
         %tbody
-          = render partial: 'courier_list', collection: Courier.all.order(:created_at)
+          = render partial: 'courier_list', collection: @courier
+      - if @pagy.pages > 1
+        .text-center
+          = render partial: 'pagy/nav', locals: { pagy: @pagy }

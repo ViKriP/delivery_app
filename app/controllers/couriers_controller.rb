@@ -1,4 +1,12 @@
 class CouriersController < ApplicationController
+  include Pagy::Backend
+
+  def index
+    sorted_couriers = Courier.all.order(:name)
+
+    @pagy, @courier = pagy(sorted_couriers, items: Courier::COURIERS_PER_PAGE)
+  end
+
   def show
     @courier = Courier.find_by(id: params[:id])
 
