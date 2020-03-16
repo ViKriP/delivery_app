@@ -1,0 +1,28 @@
+AllCops:
+  Exclude:
+    - 'node_modules/**/*'
+    - 'db/**/*'
+    - 'spec/*'
+    - 'spec/**/*'
+    - 'config/**/*'
+    - 'script/**/*'
+    - 'bin/*'
+    - !ruby/regexp /old_and_unused\.rb$/
+Style/FrozenStringLiteralComment:
+  Enabled: false
+Layout/LineLength:
+  Enabled: true
+  Max: 120
+Metrics/BlockLength:
+  Exclude:
+    - 'app/admin/*'
+Style/Documentation:
+  Enabled: false
+Layout/EndOfLine:
+  Enabled: false
+Style/HashEachMethods:
+  Enabled: true
+Style/HashTransformKeys:
+  Enabled: true
+Style/HashTransformValues:
+  Enabled: true

@@ -12,7 +12,7 @@ class PackagesController < ApplicationController
       redirect_to @courier, alert: t('package_cr_err')
     end
   end
-  
+
   private
 
   def package_params

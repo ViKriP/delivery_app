@@ -6,8 +6,6 @@ abort("The Rails environment is running in production mode!") if Rails.env.produ
 require 'rspec/rails'
 require 'capybara/rails'
 require 'capybara/rspec'
-require 'chromedriver-helper'
-
 Dir[Rails.root.join('spec', 'support', '**', '*.rb')].each { |f| require f }
 
 begin
@@ -25,5 +23,4 @@ RSpec.configure do |config|
   config.include FactoryBot::Syntax::Methods
   config.include Shoulda::Matchers::ActiveModel, type: :model
   config.include Shoulda::Matchers::ActiveRecord, type: :model
-  config.include Warden::Test::Helpers
 end

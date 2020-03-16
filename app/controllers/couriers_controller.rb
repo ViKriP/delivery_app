@@ -23,7 +23,7 @@ class CouriersController < ApplicationController
 
   def create
     @courier = Courier.new(courier_params)
- 
+
     if @courier.save
       redirect_to @courier, notice: t('courier_cr')
     else
