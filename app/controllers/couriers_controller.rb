@@ -4,7 +4,7 @@ class CouriersController < ApplicationController
   def index
     sorted_couriers = Courier.all.order(:name)
 
-    @pagy, @courier = pagy(sorted_couriers, items: Courier::COURIERS_PER_PAGE)
+    @pagy, @couriers = pagy(sorted_couriers, items: Courier::COURIERS_PER_PAGE)
   end
 
   def show
@@ -27,7 +27,9 @@ class CouriersController < ApplicationController
     if @courier.save
       redirect_to @courier, notice: t('courier_cr')
     else
-      render :new, alert: t('courier_cr_err')
+      flash[:alert] = t('courier_cr_err')
+
+      render :new
     end
   end
 
@@ -37,7 +39,9 @@ class CouriersController < ApplicationController
     if @courier.update(courier_params)
       redirect_to @courier, notice: t('courier_upd')
     else
-      render :edit, alert: t('courier_upd_err')
+      flash[:alert] = t('courier_upd_err')
+
+      render :edit
     end
   end
 

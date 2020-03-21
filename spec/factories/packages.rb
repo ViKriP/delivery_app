@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :package do
-    sequence(:track_number) { |n| "test#{n}@gmail.com" }
+    sequence(:tracking_number) { |n| "P00#{n}" }
     delivery_status { false }
   end
 end

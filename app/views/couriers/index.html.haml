@@ -6,7 +6,7 @@
       .jumbotron.text-center.mb-0
         %p= t('no_couriers')
     - else
-      = render partial: 'courier_list_xs', collection: @courier
+      = render partial: 'courier_list_xs', collection: @couriers
       - if @pagy.pages > 1
         .text-center
           = render partial: 'pagy/nav', locals: { pagy: @pagy }
@@ -23,7 +23,7 @@
             %th
               %span.in-grey-600= t('settings')
         %tbody
-          = render partial: 'courier_list', collection: @courier
+          = render partial: 'courier_list', collection: @couriers
       - if @pagy.pages > 1
         .text-center
           = render partial: 'pagy/nav', locals: { pagy: @pagy }
