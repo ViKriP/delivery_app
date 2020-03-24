@@ -10,12 +10,12 @@ jobs:
       - image: circleci/ruby:2.5.1-node-browsers
         environment:
           PGHOST: 127.0.0.1
-          PGUSER: db_admin_delivery
+          PGUSER: adm
           RAILS_ENV: test
       - image: circleci/postgres:9.5.19
         environment:
-          POSTGRES_USER: db_admin_delivery
-          POSTGRES_PASSWORD: admdb
+          POSTGRES_USER: adm
+          POSTGRES_PASSWORD: qwerty123
           POSTGRES_DB: delivery_app_test
           DATABASE_URL: postgres://ubuntu@127.0.0.1/delivery_app_test
 
