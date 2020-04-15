@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.5.1'
+ruby '2.5.8'
 
 gem 'bootsnap', '>= 1.1.0', require: false
 # Use CoffeeScript for .coffee assets and views
@@ -16,7 +16,7 @@ gem 'jquery-rails'
 gem 'pagy', '~> 3.5'
 gem 'pg', '>= 0.18', '< 2.0'
 gem 'puma', '~> 3.11'
-gem 'rails', '~> 5.2.4', '>= 5.2.4.1'
+gem 'rails', '= 5.2.4.2'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 gem 'turbolinks', '~> 5'
